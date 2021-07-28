@@ -8,6 +8,13 @@ sx = qt.sigmax()
 sy = qt.sigmay()
 sz = qt.sigmaz()
 
+pulse_dict = {
+        'I' : qt.identity(2),
+        'X' : -1j * sx,
+        'Y' : -1j * sy,
+        'Z' : -1j * sz
+}
+
 # -- Functions --
 
 # Get bloch vector of state
@@ -25,14 +32,70 @@ def spherical_to_cartesian(theta, phi):
 
     return x, y, z
 
+def xy4(time_interval=10):
+    return Sequence('XYXY', time_interval)
+
 # -- Classes --
 
+class Sequence:
+    def __init__(self, pulses=[], time_interval=10):
+        self.t_int = time_interval
+        self.set_pulses(pulses)
+    
+    def add_pulse(self, pulse):
+        if isinstance(pulse, str):
+            self.pulses.append( pulse_dict[pulse] )
+        else:
+            self.pulses.append( qt.Qobj(pulse) )
+    
+    def set_pulses(self, pulses):
+        self.pulses = []
+        for pulse in pulses:
+            self.add_pulse(pulse)
+    
+    def U(self, H=[[0,0], [0,0]]):
+        H = qt.Qobj(H)
+        free_ev = (-1j * self.t_int * H).expm()
+        U = qt.identity(2)
+        for pulse in reversed(self.pulses):
+            U *= pulse * free_ev
+        
+        return U
+    
+    def U_t(self, time, H=[[0,0], [0,0]]):
+        H = qt.Qobj(H)
+        
+        if len(self.pulses) == 0:
+            return (-1j * time * H).expm()  
+        
+        t_sequence = len(self.pulses) * self.t_int
+        n = time//t_sequence
+        # Correct for floating point error
+        if np.allclose(time/t_sequence, np.round(time/t_sequence)):
+            n = np.round(time/t_sequence)
+        U = self.U(H) ** n
+        
+        time -= t_sequence * n
+        num_pulses = int(time//self.t_int)
+        # Correct for floating point error
+        if np.allclose(time/self.t_int, np.round(time/self.t_int)):
+            num_pulses = int(np.round(time/self.t_int))
+        time -= num_pulses * self.t_int
+        
+        free_ev = (-1j * self.t_int * H).expm()
+        U2 = (-1j * time * H).expm()
+        for pulse in reversed(self.pulses[:num_pulses]):
+            U2 *= pulse * free_ev
+        
+        return U2 * U
+
 class Qubit:
-    def __init__(self, state=qt.basis(2,0), H=qt.Qobj([[0,0],[0,0]]), steps=500, dt=1):
+    def __init__(self, state=qt.basis(2,0), H=qt.Qobj([[0,0],[0,0]]), steps=500, dt=1, sequence=Sequence()):
         self.psi = qt.Qobj(state)
         self.H = qt.Qobj(H)
         self.steps = steps
         self.dt = dt
+        self.sequence = sequence
         
         self.B = None
     
@@ -50,7 +113,8 @@ class Qubit:
         self.psi = qt.Qobj(state)
     
     def state(self, time=0):
-        return (-1j * time * self.H).expm() * self.psi
+        return self.sequence.U_t(time, self.H) * self.psi
+        #return (-1j * time * self.H).expm() * self.psi
     
     def show(self, time=0):
         b = qt.Bloch()
@@ -61,15 +125,17 @@ class Qubit:
     
     def getxyz(self, steps, dt):
         x, y, z = [], [], []
-        t = np.arange(0, steps*dt, dt)
+        t = 0
 
-        for t_i in t:
-            theta, phi = get_bloch(self.state(t_i))
+        while t < steps*dt:
+            theta, phi = get_bloch(self.state(t))
             x_i, y_i, z_i = spherical_to_cartesian(theta, phi)
 
             x.append(x_i)
             y.append(y_i)
             z.append(z_i)
+            
+            t += dt
             
         return x, y, z
     
@@ -95,8 +161,13 @@ class Qubit:
         
         return animation.FuncAnimation(fig, a, np.arange(self.steps), init_func=lambda:ax, repeat=False)
     
-    def path(self):
-        x, y, z = self.getxyz(self.steps, self.dt)
+    def path(self, steps=None, dt=None):
+        if steps is None:
+            steps = self.steps
+        if dt is None:
+            dt = self.dt
+    
+        x, y, z = self.getxyz(steps, dt)
         
         b = qt.Bloch()
         b.add_states(self.psi)
