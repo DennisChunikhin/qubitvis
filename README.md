@@ -1,7 +1,7 @@
 # QubitVis
-QubitVis is a python package for visualizing qubits and the time evolution of qubits.  
+**QubitVis** is a python package for visualizing qubits and the time evolution of qubits.  
 <br/>
-Note: If you are using a Jupyter Notebook, include `%matplotlib notebook`{:.language-python} at the start of your notebook for certain functions such as `animate()` to work properly.
+Note: If you are using a Jupyter Notebook, include `%matplotlib notebook` at the start of your notebook for certain functions such as `animate()` to work properly.
 ## Methods
 ### Qubit Methods
 | Method | Description |
@@ -23,5 +23,5 @@ Note: If you are using a Jupyter Notebook, include `%matplotlib notebook`{:.lang
 | get_pulses() | Returns the sequence of pulses (gates) as an array of `qutip.Qobj` objects. |
 | set_pulses(pulses) | Sets the sequence of pulses (gates). |
 ## Links
-[Demo](https://github.com/DennisChunikhin/qubitvis/blob/master/Demo.ipynb)
+[Demo](https://github.com/DennisChunikhin/qubitvis/blob/master/Demo.ipynb)  
 [Documentation](https://dennischunikhin.github.io/qubitvis/build/html/index.html)
