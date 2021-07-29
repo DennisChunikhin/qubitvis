@@ -2,6 +2,15 @@
 **QubitVis** is a python package for visualizing qubits and the time evolution of qubits.  
 <br/>
 Note: If you are using a Jupyter Notebook, include `%matplotlib notebook` at the start of your notebook for certain functions such as `animate()` to work properly.
+## Installation
+QubitVis can be installed using pip:
+```
+pip install git+https://github.com/DennisChunikhin/qubitvis.git#egg=qubitvis
+```
+Once it is installed, you can import QubitVis in python scripts:
+```python
+import qubitvis
+```
 ## Methods
 ### Qubit Methods
 | Method | Description |
