@@ -239,7 +239,7 @@ class Qubit:
         return x, y, z
     
     def animate(self, steps=None, dt=None):
-        """Shows an animation of the qubit as a Bloch sphere
+        """Shows an animation of the qubit as a Bloch sphere. Note that if you are using a Jupyter Notebook, you must include :code:`%matplotlib notebook` at the start of the notebook.
         
         :param steps: The number of time steps, defaults to the value set during the object's initialization
         :type steps: int, optional
@@ -268,7 +268,7 @@ class Qubit:
         return animation.FuncAnimation(fig, a, np.arange(self.steps), init_func=lambda:ax, repeat=False)
     
     def path(self, steps=None, dt=None):
-        """Shows the qubit's path and initial state on the Bloch sphere
+        """Shows the qubit's path and initial state on the Bloch sphere.
         
         :param steps: The number of time steps, defaults to the value set during the object's initialization
         :type steps: int, optional
