@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>QubitVis documentation &mdash; QubitVis 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> QubitVis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">QubitVis documentation</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">QubitVis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>QubitVis documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="qubitvis-documentation">
+<h1>QubitVis documentation<a class="headerlink" href="#qubitvis-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-qubitvis"></span><dl class="py class">
+<dt class="sig sig-object py" id="qubitvis.Qubit">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qubitvis.</span></span><span class="sig-name descname"><span class="pre">Qubit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">state=[[1],</span> <span class="pre">[0]],</span> <span class="pre">H=[[0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0]],</span> <span class="pre">steps=500,</span> <span class="pre">dt=0.1,</span> <span class="pre">sequence=&lt;qubitvis.Sequence</span> <span class="pre">object&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Qubit" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a class that represents a qubit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>2x1 matrix</em><em>, </em><em>optional</em>) – The initial state, defaults to [[1],[0]]</p></li>
+<li><p><strong>H</strong> (<em>2x2 matrix</em><em>, </em><em>optional</em>) – The Hamiltonian, defaults to [[0,0],[0,0]]</p></li>
+<li><p><strong>steps</strong> (<em>int</em><em>, </em><em>optional</em>) – The default number of time steps calculated, defaults to 500</p></li>
+<li><p><strong>dt</strong> (<em>float</em><em>, </em><em>optional</em>) – The time that elapses between time steps, defaults to 0.1</p></li>
+<li><p><strong>sequence</strong> (<a class="reference internal" href="#qubitvis.Sequence" title="qubitvis.Sequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">qubitvis.Sequence</span></code></a>, optional) – A sequence of pulses that the qubit repeatedly executes, defaults to a <a class="reference internal" href="#qubitvis.Sequence" title="qubitvis.Sequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">qubitvis.Sequence</span></code></a> with no pulses</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Qubit.animate">
+<span class="sig-name descname"><span class="pre">animate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Qubit.animate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows an animation of the qubit as a Bloch sphere</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>steps</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of time steps, defaults to the value set during the object’s initialization</p></li>
+<li><p><strong>dt</strong> (<em>float</em><em>, </em><em>optional</em>) – The time elapsed between each time step, defaults to the value set during the object’s initialization</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Qubit.hamiltonian">
+<span class="sig-name descname"><span class="pre">hamiltonian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">H</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Qubit.hamiltonian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns and/or sets the Hamiltonian.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>H</strong> (<em>2x2 matrix</em><em>, </em><em>optional</em>) – The Hamiltonian - Does not set the Hamiltonian if the value of this parameter is None, defaults to None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Qubit.magnetic_field">
+<span class="sig-name descname"><span class="pre">magnetic_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">B</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Qubit.magnetic_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the magnetic field acting on the qubit (and updates the Hamiltonian correspondingly).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>B</strong> (<em>list</em>) – Represents the magnetic field - The first element is the X component, the second is the y component, and the third is the z component</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Qubit.path">
+<span class="sig-name descname"><span class="pre">path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Qubit.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows the qubit’s path and initial state on the Bloch sphere</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>steps</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of time steps, defaults to the value set during the object’s initialization</p></li>
+<li><p><strong>dt</strong> (<em>float</em><em>, </em><em>optional</em>) – The time elapsed between each time step, defaults to the value set during the object’s initialization</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Qubit.sequence">
+<span class="sig-name descname"><span class="pre">sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Qubit.sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns and/or sets the sequence of pulses (gates).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sequence</strong> (<a class="reference internal" href="#qubitvis.Sequence" title="qubitvis.Sequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">qubitvis.Sequence</span></code></a>, optional) – The sequence of pulses (gates) - Does not set the sequence if the value of this parameter is None, defaults to None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Qubit.set_state">
+<span class="sig-name descname"><span class="pre">set_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Qubit.set_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the qubit’s initial state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>2x1 matrix</em>) – The new initial state</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Qubit.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Qubit.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows the qubit as a Bloch sphere.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>time</strong> (<em>float</em><em>, </em><em>optional</em>) – Shows the qubit state at the time given by this parameter</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Qubit.state">
+<span class="sig-name descname"><span class="pre">state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Qubit.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the qubit’s state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>time</strong> (<em>float</em><em>, </em><em>optional</em>) – Returns the state at the time given by this parameter</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="qubitvis.Sequence">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qubitvis.</span></span><span class="sig-name descname"><span class="pre">Sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pulses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a class that represents a pulse sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pulses</strong> (<em>list</em><em>, </em><em>optional</em>) – Represents the sequence of pulses - Can be a string consisting of X, Y, Z, and/or I (representing the X, Y, Z, and identity gates correspondingly), or an array of 2x2 matrices representing each gate, defaults to []</p></li>
+<li><p><strong>time_interval</strong> (<em>int</em><em> or </em><em>float</em><em>, </em><em>optional</em>) – The time that elapses between each pulse, defaults to 1</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Sequence.U">
+<span class="sig-name descname"><span class="pre">U</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">H</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[[0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0]]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Sequence.U" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unitary operator for one iteration of the entire sequence of pulses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>H</strong> (<em>2x2 matrix</em><em>, </em><em>optional</em>) – The Hamiltonian for free evolution, defaults to [[0,0], [0,0]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Sequence.U_t">
+<span class="sig-name descname"><span class="pre">U_t</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[[0,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0]]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Sequence.U_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unitary operator for the sequence of pulses at the given time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>float</em>) – Time (starting from the first pulse)</p></li>
+<li><p><strong>H</strong> (<em>2x2 matrix</em><em>, </em><em>optional</em>) – The Hamiltonian for free evolution, defaults to [[0,0], [0,0]]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Sequence.add_pulse">
+<span class="sig-name descname"><span class="pre">add_pulse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pulse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Sequence.add_pulse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends a pulse (gate) to the sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pulse</strong> (<em>str</em><em> or </em><em>2x2 matrix</em>) – A 2x2 matrix representing the gate, or one of the strings <cite>‘X’</cite>, <cite>‘Y’</cite>, <cite>‘Z’</cite>, or <cite>‘I’</cite> (representing the X, Y, Z, and identity gates correspondingly)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Sequence.get_pulses">
+<span class="sig-name descname"><span class="pre">get_pulses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Sequence.get_pulses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the sequence of pulses (gates) as an array of <code class="xref py py-class docutils literal notranslate"><span class="pre">qutip.Qobj</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qubitvis.Sequence.set_pulses">
+<span class="sig-name descname"><span class="pre">set_pulses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pulses</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.Sequence.set_pulses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the sequence of pulses (gates).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pulses</strong> (<em>list</em>) – Represents the sequence of pulses - Can be a string consisting of X, Y, Z, and/or I (representing the X, Y, Z, and identity gates correspondingly), or an array of 2x2 matrices representing each gate</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qubitvis.get_bloch">
+<span class="sig-prename descclassname"><span class="pre">qubitvis.</span></span><span class="sig-name descname"><span class="pre">get_bloch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.get_bloch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Bloch sphere coordinates (theta, phi) of a quantum state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>2x1 matrix</em>) – The quantum state</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qubitvis.spherical_to_cartesian">
+<span class="sig-prename descclassname"><span class="pre">qubitvis.</span></span><span class="sig-name descname"><span class="pre">spherical_to_cartesian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.spherical_to_cartesian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the cartesian coordinates (x, y, z) corresponding to the given spherical coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>theta</strong> (<em>float</em>) – The polar angle</p></li>
+<li><p><strong>phi</strong> (<em>float</em>) – The azimuthal angle</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qubitvis.xy4">
+<span class="sig-prename descclassname"><span class="pre">qubitvis.</span></span><span class="sig-name descname"><span class="pre">xy4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qubitvis.xy4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <a class="reference internal" href="#qubitvis.Sequence" title="qubitvis.Sequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">qubitvis.Sequence</span></code></a> object with the pulses (gates) X, Y, X, Y.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>time_interval</strong> (<em>int</em><em> or </em><em>float</em><em>, </em><em>optional</em>) – The time that elapses between each pulse, defaults to 1</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Dennis Chunikhin.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
